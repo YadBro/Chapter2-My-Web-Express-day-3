@@ -31,6 +31,7 @@
     font-size: 15px;
     background-color: #111727;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .actions .delete-button  {
@@ -46,7 +47,7 @@
     font-size: 15px;
     background-color: #111727;
     border: none;
-
+    text-decoration: none;
 }
 body {
     font-family: 'Poppins', sans-serif;

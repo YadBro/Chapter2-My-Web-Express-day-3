@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "body-parser": "^1.20.0",
+    "calculating-date": "^1.0.8",
     "express": "^4.17.3",
     "hbs": "^4.2.0",
-    "moment": "^2.29.3"
+    "moment": "^2.29.3",
+    "pg": "^8.7.3"
   },
   "name": "introduction-node",
   "version": "1.0.0",

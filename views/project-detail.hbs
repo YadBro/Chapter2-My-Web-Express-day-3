@@ -10,58 +10,43 @@
     <!-- MY PROJECTS CONTENT START -->
     <div class="container">
         <div class="row mt-5">
-            <h1 class="text-center">Dumbways Web App</h1>
 
+            {{#each getData }}
+            <h1 class="text-center">{{ this.formInput.inputName }}</h1>
             <div class="my-flex mt-5">
                 <div class="justify-content-start flex-68 me-5">
-                    <img src="Soal/BACK.jpg" alt="Project Image" class="img-fluid">
+                    <img src="/public/assets/img/BACK.jpg" alt="Project Image" class="img-fluid">
                 </div>
                 <div class="justify-content-end flex-32 ms-3">
                     <h3>Duration</h3>
-                    <i class="fa-solid fa-calendar-days fa-2xl mt-4 me-4"></i><small class="fs-5 text-color-pudar">12
-                        Jan
-                        2021 -
-                        11 Feb
-                        2021</small><br>
-                    <i class="fa-solid fa-clock fa-2xl mt-5 me-4"></i><small class="fs-5 text-color-pudar">1
-                        month</small>
+                    <i class="fa-solid fa-calendar-days fa-2xl mt-4 me-4"></i><small class="fs-5 text-color-pudar">{{this.formInput.inputStartDate}} - {{this.formInput.inputEndDate}}</small><br>
+                    <i class="fa-solid fa-clock fa-2xl mt-5 me-4"></i><small class="fs-5 text-color-pudar">{{this.date.day}} {{this.date.month}} {{this.date.year}}</small>
                     <br>
                     <h3 class="mt-5">Technologies</h3>
                     <div class="col-md-10">
                         <div class="mb-3">
-                            <img width="30px" class="me-1" src="assets/img/node-js.png" id="nodeJsIcon"
+                            {{#if (isTrue this.formInput.nodeJsTechnology "on") }}
+                            <img width="30px" class="me-1" src="/public/assets/img/node-js.png" id="nodeJsIcon"
                                 alt="nodeJsIcon"><small class="fs-5 text-color-pudar me-4">Node Js</small>
-                            <img width="30px" class="me-1 ms-2" src="assets/img/react-js.png" id="reactJsIcon"
+                            {{/if}}
+                            {{#if (isTrue this.formInput.reactJsTechnology "on") }}
+                            <img width="30px" class="me-1 ms-2" src="/public/assets/img/react-js.png" id="reactJsIcon"
                                 alt="reactJsIcon"><small class="fs-5 text-color-pudar me-2">React Js</small><br><br>
-                            <img width="30px" class="me-1" src="assets/img/next-js.png" id="nextJsIcon"
+                            {{/if}}
+                            {{#if (isTrue this.formInput.nextJsTechnology "on") }}
+                            <img width="30px" class="me-1" src="/public/assets/img/next-js.png" id="nextJsIcon"
                                 alt="nextJsIcon"><small class="fs-5 text-color-pudar me-5">Next Js</small>
-                            <img width="30px" class="me-1" src="assets/img/typescript.png" id="typeScriptIcon"
+                            {{/if}}
+                            {{#if (isTrue this.formInput.typeScriptTechnology "on") }}
+                            <img width="30px" class="me-1" src="/public/assets/img/typescript.png" id="typeScriptIcon"
                                 alt="typeScriptIcon"><small class="fs-5 text-color-pudar me-2 ">TypeScript</small>
+                            {{/if}}
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <p class="text-bold mt-5 fw-normal lh-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Aliquam pariatur, rerum consequatur nihil doloribus perspiciatis veniam porro nam, explicabo ut,
-                voluptatibus veritatis reprehenderit! Dicta, doloremque accusamus. Sit alias magni ducimus debitis
-                fugiat repellat cum nobis quidem at? Ab sunt quae, non facilis vel necessitatibus ullam quis unde quia
-                repellat commodi earum corrupti corporis soluta fuga. Omnis dolore aspernatur eos vitae nisi nihil
-                tempore doloribus inventore. Ex perferendis commodi expedita. Reiciendis nulla, laborum in dicta tenetur
-                tempora alias, fugit doloribus aspernatur enim ad eligendi labore quod officiis commodi porro
-                dignissimos. Minima illum ad debitis animi tenetur cum molestiae necessitatibus, velit dignissimos
-                similique tempora saepe perspiciatis! Facere id aliquid aliquam laborum obcaecati tenetur porro totam
-                exercitationem deserunt eius ea consectetur explicabo vel ullam saepe illo nobis, veritatis aut non
-                illum tempora sint odit sequi ipsam? Iste, libero sit. Ducimus consequatur aliquid adipisci sunt quaerat
-                dolore inventore a quia, dolorum labore facilis ex accusantium, minima eum amet doloremque maiores eos
-                optio incidunt magnam laboriosam cumque hic excepturi earum! Incidunt earum ad voluptates, laborum
-                reiciendis impedit esse adipisci, ut dolores dolore deserunt sint. Beatae ex commodi dignissimos quis
-                ratione, cumque corporis quidem fuga quia, ut dolorum animi aliquam minima repellendus nihil iusto
-                excepturi quaerat! Praesentium tempore delectus est beatae dolor voluptate, rerum voluptatem modi
-                officia eos, et accusamus, at laudantium deserunt facere minus labore autem totam aperiam. Nulla fugit
-                maxime accusamus vero doloribus numquam, architecto inventore exercitationem et sed ut molestias! Earum
-                quis omnis animi, similique dicta ipsa, neque ab eaque, ullam architecto debitis!</p>
+            <p class="text-bold mt-5 fw-normal lh-base">{{this.formInput.inputDescription}}</p>
+            {{/each}}
         </div>
     </div>
     <!-- MY PROJECTS CONTENT END -->

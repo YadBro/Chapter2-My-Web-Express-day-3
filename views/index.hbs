@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="out-card p-5 mt-5 rounded-3 shadow">
-        <h1 class="text-center">MY PROJECTS</h1>
+        <h1 class="text-center" id="myproject">MY PROJECTS</h1>
         <div class="mt-5 d-flex flex-fill flex-row flex-wrap justify-content-center">
 
 
@@ -160,26 +160,36 @@
                     </div>
                 </div>
             </div>
+            {{#each blogs}}
             <div class="card my-card m-3" style="width: 27rem;">
                 <img src="https://source.unsplash.com/1280x960?programming" class="card-img-top p-3"
                     alt="My Project Image">
                 <div class="card-body">
-                    <h5 class="card-title">Dumbways Mobile App - 2021</h5>
-                    <small class="fs-6 duration">duration: 3 month</small>
-                    <p class="card-text mt-4 mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Earum magnam blanditiis dolorum, quas aperiam ab?</p>
+                    <h5 class="card-title"><a href="/detail-project/{{@index}}" style="text-decoration: none; color:black">{{ this.formInput.inputName }} - 2021</a></h5>
+                    <small class="fs-6 duration">duration: {{this.date.day}} {{this.date.month}} {{this.date.year}} ago</small>
+                    <p class="card-text mt-4 mb-4">{{this.formInput.inputDescription}}</p>
                     <div class="technologies mt-3">
+                        {{#if (isTrue this.formInput.nodeJsTechnology "on") }}
                         <img src="/public/assets/img/node-js.png" alt="">
+                        {{/if}}
+                        {{#if (isTrue this.formInput.reactJsTechnology "on") }}
                         <img src="/public/assets/img/react-js.png" alt="">
+                        {{/if}}
+                        {{#if (isTrue this.formInput.nextJsTechnology "on") }}
                         <img src="/public/assets/img/next-js.png" alt="">
+                        {{/if}}
+                        {{#if (isTrue this.formInput.typeScriptTechnology "on") }}
                         <img src="/public/assets/img/typescript.png" alt="">
+                        {{/if}}
                     </div>
                     <div class="actions">
-                        <button class="edit-button">edit</button>
-                        <button class="delete-button">delete</button>
+                        <a href="/update/{{@index}}" class="edit-button">edit</a>
+                        <a href="/delete/{{@index}}" class="delete-button">delete</a>
                     </div>
                 </div>
             </div>
+            {{/each }}
+
 
         </div>
     </div>

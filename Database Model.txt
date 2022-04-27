@@ -1,0 +1,27 @@
+1. Catat database yang nanti di simpan
+   - PROJECT
+	a. Project Name	
+	b. Date		
+	c. Description	
+	d. Technologies	
+	e. Image	
+FCFE13 1BDEBC
+2. Tentukan tipe data
+   - PROJECT
+	a. Project Name	= character var
+	b. Date		= timestamp with timezone
+	c. Description	= text
+	d. Technologies	= boolean
+	e. Image	= character var
+
+3. Tentukan panjang data dan nilai default
+   - PROJECT
+	a. Project Name	= character var	(100)
+	b. Date		= timestamp with timezone = now()
+	c. Description	= text
+	d. Technologies	= boolean
+	e. Image	= character var	(100)
+
+4. Tambahkan id
+   - PROJECT
+	f. id	= serial
